@@ -42,7 +42,7 @@ jobs:
           cd ${{ matrix.component }}
           npm run lint
   
-  # Stag 2 - SCA security Scan Stage 
+  # Stage 2 - SCA security Scan Stage
   sca:
     name: "SCA dependency audit"
     needs: lint
@@ -107,7 +107,7 @@ jobs:
           tags: |
             type=ref,event=branch
             type=ref,event=pr
-            type=sha,value=latest,enable=${{is_default_branch}}
+            type=sha,value=latest,enable={{is_default_branch}}
 
       - name: Build and push image
         uses: docker/build-push-action@v5
