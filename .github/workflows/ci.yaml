@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ devops ]
 
+# Security: restrict default permissions to read-only
+permissions:
+  contents: read
+
 env:
   DOCKER_REGISTRY: ghcr.io
   BACKEND_IMAGE: ghcr.io/${{ github.repository }}/blogapp-backend
