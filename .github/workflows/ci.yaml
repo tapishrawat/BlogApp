@@ -31,16 +31,14 @@ jobs:
           check-latest: true
           cache: 'npm'
           cache-dependency-path: "${{ matrix.component }}/package-lock.json"
-      
+        
       - name: Install dependencies
-        run: |
-          cd ${{ matrix.component }}
-          npm ci
-          
+        working-directory: ${{ matrix.component }}
+        run: npm ci
+
       - name: Run ESLint
-        run: |
-          cd ${{ matrix.component }}
-          npm run lint
+        working-directory: ${{ matrix.component }}
+        run: npm run lint
   
   # Stage 2 - SCA security Scan Stage
   sca:
