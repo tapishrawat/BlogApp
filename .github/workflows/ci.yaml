@@ -2,9 +2,9 @@ name: BlogApp DevSecOps Workflow
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "release" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "release" ]
 
 env:
   DOCKER_REGISTRY: ghcr.io
