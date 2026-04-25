@@ -66,15 +66,14 @@ jobs:
           cache-dependency-path: "${{ matrix.component }}/package-lock.json"
       
       - name: Install dependencies
-        run: |
-          cd ${{ matrix.component }}
-          npm ci
+        working-directory: ${{ matrix.component }}
+        run: npm ci
       
       # npm audit for known vulnerabilities (faile on high/critical)
       - name: Audit dependencies
-        run: |
-          cd ${{ matrix.component }}
-          npm audit --audit-level=high || true
+        working-directory: ${{ matrix.component }}
+        run: npm audit --audit-level=high || true
+        # `|| true` to not fail on moderate — need to adjust in prod
 
 # Stage 3 - Build & Push Container image
   build:
