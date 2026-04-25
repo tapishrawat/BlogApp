@@ -200,7 +200,7 @@ spec:
               echo "DB is ready!"
       containers:
         - name: backend
-          image: rawattapish/blogapp_backend:3.0
+          image: ghcr.io/tapishrawat/BlogApp/blogapp-backend:7de8361
           ports:
             - containerPort: 5000
               protocol: TCP
@@ -307,7 +307,7 @@ spec:
           effect: "NoSchedule"
       containers:
         - name: frontend
-          image: rawattapish/blogapp_frontend:3.0
+          image: ghcr.io/tapishrawat/BlogApp/blogapp-frontend:7de8361
           ports:
             - containerPort: 8080
               protocol: TCP
