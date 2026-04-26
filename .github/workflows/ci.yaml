@@ -100,7 +100,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository }}/blogapp-${{ matrix.component }}}
+          images: ghcr.io/${{ github.repository }}/blogapp-${{ matrix.component }}
           tags: |
             type=ref,event=branch
             type=ref,event=pr
@@ -113,7 +113,7 @@ jobs:
           file: ./${{ matrix.component }}/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
-          lables: ${{ steps.meta.outputs.labels }}
+          labels: ${{ steps.meta.outputs.labels }}
           platforms: linux/amd64
           cache-from: type=gha
           cache-to: type=gha,mode=max
