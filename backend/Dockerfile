@@ -1,5 +1,5 @@
 # -------- Build Stage -------
-FROM node:20-alpine AS build
+FROM node:25-alpine AS build
 
 WORKDIR /app
 
@@ -13,7 +13,7 @@ FROM node:20-alpine AS production
 
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
-RUN apk --no-cache add dumb-init
+RUN apk --no-cache add dumb-init=1.2.5-r4
 
 WORKDIR /app
 
