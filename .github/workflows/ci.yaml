@@ -43,7 +43,8 @@ jobs:
         run: npm run lint
 
 # or
-run: cd frontend && npx eslint src/ --ext .js,.jsx
+# run: cd frontend && npx eslint src/ --ext .js,.jsx
+
   # Stage 2 - SCA security Scan Stage
   sca:
     name: "SCA dependency audit"
