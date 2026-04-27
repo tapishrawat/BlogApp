@@ -200,7 +200,7 @@ spec:
               echo "DB is ready!"
       containers:
         - name: backend
-          image: ghcr.io/tapishrawat/BlogApp/blogapp-backend:3563916
+          image: ghcr.io/tapishrawat/BlogApp/blogapp-backend:55526ea
           ports:
             - containerPort: 5000
               protocol: TCP
@@ -307,7 +307,7 @@ spec:
           effect: "NoSchedule"
       containers:
         - name: frontend
-          image: ghcr.io/tapishrawat/BlogApp/blogapp-frontend:3563916
+          image: ghcr.io/tapishrawat/BlogApp/blogapp-frontend:55526ea
           ports:
             - containerPort: 8080
               protocol: TCP
