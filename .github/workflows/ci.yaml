@@ -32,11 +32,13 @@ jobs:
           cache: 'npm'
           cache-dependency-path: "${{ matrix.component }}/package-lock.json"
         
-      - name: Install dependencies
+      - name: Install dependencies npm
         working-directory: ${{ matrix.component }}
-        run: | 
-          npm install
-          npm ci
+        run: npm install
+
+      - name: Install dependencies ci
+        working-directory: ${{ matrix.component }}
+        run: npm ci
 
       - name: Run ESLint
         working-directory: ${{ matrix.component }}
