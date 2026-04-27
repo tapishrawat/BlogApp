@@ -142,7 +142,7 @@ jobs:
 
       - name: Build image for scan
         run: |
-          docker build -t blogapp-${{ matrix.component }}:scan /${{ matrix.component }}
+          docker build -t blogapp-${{ matrix.component }}:scan ./${{ matrix.component }}
       
       - name: Set up Trivy
         uses: aquasecurity/trivy-action@master
