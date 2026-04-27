@@ -34,12 +34,17 @@ jobs:
         
       - name: Install dependencies
         working-directory: ${{ matrix.component }}
-        run: npm ci
+        run: | 
+          npm install
+          npm ci
 
       - name: Run ESLint
         working-directory: ${{ matrix.component }}
         run: npm run lint
-  
+
+# or
+# run: cd frontend && npx eslint src/ --ext .js,.jsx
+
   # Stage 2 - SCA security Scan Stage
   sca:
     name: "SCA dependency audit"
